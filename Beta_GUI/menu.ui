@@ -14,8 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #152B22, stop:0.25 #152B22, stop:1 #000000); /* Gradiante de verde camuflaje a negro *
-</string>
+   <string notr="true">background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #152B22, stop:0.25 #15AB22, stop:1 #000000); /* Gradiante de verde camuflaje a negro *</string>
   </property>
   <widget class="QPushButton" name="PlayButton">
    <property name="geometry">
@@ -31,6 +30,9 @@
      <family>Minecraft</family>
      <pointsize>26</pointsize>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
@@ -58,13 +60,27 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
+    <string notr="true">/* Estilo para el QComboBox */
+QComboBox {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
     border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
     border-radius: 10px; /* Bordes redondeados con un radio de 10px */
     padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del combo */
     min-width: 6em; /* Ancho mínimo */
-    color: white; /* Color del texto */</string>
+    color: white; /* Color del texto */
+}
+
+/* Estilo para el QAbstractItemView dentro del QComboBox (el cuadro desplegable) */
+QComboBox QAbstractItemView {
+    color: white; /* Color del texto en el cuadro desplegable */
+}
+</string>
    </property>
+   <item>
+    <property name="text">
+     <string>Version</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -183,6 +199,9 @@
      <family>Minecraft</family>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>CrossCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QCheckBox {
     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
@@ -216,6 +235,9 @@ QCheckBox::indicator {
      <family>Minecraft</family>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>CrossCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QCheckBox {
     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
@@ -248,6 +270,9 @@ QCheckBox::indicator {
     <font>
      <family>Minecraft</family>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>CrossCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QCheckBox {
@@ -283,6 +308,9 @@ QCheckBox::indicator {
      <pointsize>20</pointsize>
      <kerning>true</kerning>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */
@@ -356,6 +384,9 @@ QCheckBox::indicator {
      <kerning>true</kerning>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */
     border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
@@ -382,6 +413,9 @@ QCheckBox::indicator {
      <pointsize>20</pointsize>
      <kerning>true</kerning>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */

@@ -108,6 +108,9 @@
      <kerning>true</kerning>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */
     border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
@@ -163,6 +166,9 @@
      <kerning>true</kerning>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */
     border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
@@ -190,6 +196,9 @@
      <kerning>true</kerning>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */
     border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
@@ -215,6 +224,9 @@
      <family>Minecraft</family>
      <pointsize>16</pointsize>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>CrossCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
@@ -253,39 +265,17 @@
     <string>Java Path</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="PlayButton">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>470</y>
-     <width>191</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-     <pointsize>26</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
-    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
-    border-radius: 10px; /* Bordes redondeados con un radio de 10px */
-</string>
-   </property>
-   <property name="text">
-    <string>Play</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="blockImage">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>140</y>
+     <x>580</x>
+     <y>190</y>
      <width>250</width>
      <height>250</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>ForbiddenCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
@@ -306,7 +296,6 @@ background: transparent
   <zorder>saveButton</zorder>
   <zorder>ramBox</zorder>
   <zorder>label_5</zorder>
-  <zorder>PlayButton</zorder>
   <zorder>blockImage</zorder>
  </widget>
  <resources/>

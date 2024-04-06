@@ -1,12 +1,8 @@
 # General imports
-import json, time, os, sys, subprocess
-from tkinter import messagebox
-from datetime import datetime
+import json, os, sys, subprocess
 # Qt imports
 from PyQt5.QtWidgets import QApplication, QPushButton, QMainWindow
-from PyQt5.QtGui import QStandardItemModel, QStandardItem,QBrush, QColor, QFont, QPixmap, QIcon
-from PyQt5.QtCore import QDate, QTimer
-from PyQt5 import uic, QtWidgets
+from PyQt5 import QtWidgets
 # Local imports
 
 def eliminar_esta_funcion():
@@ -32,9 +28,12 @@ def eliminar_esta_funcion():
 eliminar_esta_funcion()
 
 from Utilities.general import *
+from Utilities.minecraft_engine import run
 import Assets
 from Beta_GUI.menu_ui import Ui_Menu
 from Beta_GUI.configPane_ui import Ui_ConfigPane
+# Minecraft imports
+import minecraft_launcher_lib
 
 class ConfigPane(QMainWindow):
     def __init__(self):
@@ -57,6 +56,8 @@ class main_gui(QtWidgets.QMainWindow):
         self.prepareWidgets()
         self.loadVariable()
         self.setWindowTitle("MDW Launcher")
+        self.menuUi.vanillaCheck.setChecked(True)  
+        self.loadQcomboBox()
         
     def loadVariable(self) -> None:
         def pathCheck():
@@ -71,6 +72,7 @@ class main_gui(QtWidgets.QMainWindow):
                     '/home', self.user_linux, '.mdwLauncher'
                 )
             self.configPath = f"{self.minecraft_directory}{os.sep}mdw_config.json"
+            self.versionsPath = f"{self.minecraft_directory}{os.sep}instaled.versions"
             if not os.path.exists(self.minecraft_directory):
                 os.makedirs(self.minecraft_directory)
         def javaCheck():
@@ -167,6 +169,15 @@ class main_gui(QtWidgets.QMainWindow):
         if QstMsg('Config', 'Changes you made may not be saved. Are you sure you want to exit?'):
             self.configUi.destroy()
         
+    def checkbox_state_changed(self, state):
+        sender = self.sender()  # Identifica qué checkbox emitió la señal
+        checkboxes = [self.menuUi.vanillaCheck, self.menuUi.fabricCheck, self.menuUi.forgeCheck]
+        if state == 2:  # Estado 2 significa que el checkbox está marcado
+            for checkbox in checkboxes:
+                if checkbox != sender and checkbox.isChecked():
+                    checkbox.setChecked(False)
+                    break                
+        
     def saveConfig(self):
         ram = self.configUi.ui.ramBox.value()
         javaPath = self.configUi.ui.javaPathEntry.text()
@@ -183,7 +194,66 @@ class main_gui(QtWidgets.QMainWindow):
         else:
             with open(self.configPath, "w") as f:
                 json.dump({"RAM": ram, "JAVA": javaPath}, f)
+            AdvMsg(
+                'Success!',
+                'Settings have been successfully saved!'
+                )
 
+    def playfn(self):
+        if self.menuUi.nameEntry.text() != "":
+            if  self.menuUi.VersionBox.currentText() != "Version":
+                checkboxes = [self.menuUi.vanillaCheck, self.menuUi.fabricCheck, self.menuUi.forgeCheck]
+                AnyCheckBox = False
+                for i in checkboxes:
+                    if i.isChecked():
+                        AnyCheckBox = True
+                        break
+                if not AnyCheckBox:
+                    ErrorMsg(
+                        'No mode selected',
+                        'You must select one mode.'
+                    )
+                else:
+                    if self.menuUi.vanillaCheck.isChecked():
+                        mode = 'Vanilla'
+                    elif self.menuUi.fabricCheck.isChecked():
+                        mode = 'Fabric'
+                    elif  self.menuUi.forgeCheck.isChecked():
+                        mode = 'Forge'
+                    
+                    
+                    
+                    run(
+                        minePath=self.minecraft_directory,
+                        configPath=self.configPath,
+                        versionsPath=self.versionsPath
+                        ,username=self.menuUi.nameEntry.text(),
+                        version=self.menuUi.VersionBox.currentText(),
+                        mode=mode,
+                    )
+            else:
+                ErrorMsg(
+                    'You must select a version first',
+                    'Cannot start Minecraft without selecting a version'
+                )
+        else:
+            ErrorMsg(
+                'Username error',
+                'Your username cannot be empty.'
+            )
+            
+    def loadQcomboBox(self):
+            version_list = minecraft_launcher_lib.utils.get_version_list()
+            # Filtrar las snapshots de la lista de versiones
+            release_versions = []
+            for i in version_list:
+                if i["type"] == "release":
+                    release_versions.append(i["id"])
+            instaled_versions = minecraft_launcher_lib.utils.get_installed_versions(self.minecraft_directory)
+            allversions = instaled_versions + release_versions
+            self.menuUi.VersionBox.clear()
+            self.menuUi.VersionBox.addItems(allversions)
+            
     def prepareWidgets(self, main = True) -> None:
         def loadImages():
             if main:
@@ -196,6 +266,10 @@ class main_gui(QtWidgets.QMainWindow):
                 self.menuUi.settingsButton.clicked.connect(self.configload)
                 self.menuUi.exitButton.clicked.connect(self.exit_)
                 self.menuUi.filesButton.clicked.connect(self.seeLocalFiles)
+                self.menuUi.forgeCheck.stateChanged.connect(self.checkbox_state_changed)
+                self.menuUi.fabricCheck.stateChanged.connect(self.checkbox_state_changed)
+                self.menuUi.vanillaCheck.stateChanged.connect(self.checkbox_state_changed)
+                self.menuUi.PlayButton.clicked.connect(self.playfn)
             else:
                 self.configUi.ui.saveButton.clicked.connect(self.saveConfig)
                 self.configUi.ui.GoBackButton.clicked.connect(self.exitconfig)

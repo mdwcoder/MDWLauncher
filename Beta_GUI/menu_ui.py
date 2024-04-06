@@ -15,14 +15,14 @@ class Ui_Menu(object):
     def OpenMenu(self, Form):
         Form.setObjectName("Form")
         Form.resize(916, 586)
-        Form.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #152B22, stop:0.25 #152B22, stop:1 #000000); /* Gradiante de verde camuflaje a negro *\n"
-"")
+        Form.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #152B22, stop:0.25 #15AB22, stop:1 #000000); /* Gradiante de verde camuflaje a negro *")
         self.PlayButton = QtWidgets.QPushButton(Form)
         self.PlayButton.setGeometry(QtCore.QRect(670, 470, 191, 101))
         font = QtGui.QFont()
         font.setFamily("Minecraft")
         font.setPointSize(26)
         self.PlayButton.setFont(font)
+        self.PlayButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.PlayButton.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -34,13 +34,23 @@ class Ui_Menu(object):
         font.setFamily("Minecraft")
         font.setPointSize(12)
         self.VersionBox.setFont(font)
-        self.VersionBox.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
+        self.VersionBox.setStyleSheet("/* Estilo para el QComboBox */\n"
+"QComboBox {\n"
+"    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
 "    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del combo */\n"
 "    min-width: 6em; /* Ancho mínimo */\n"
-"    color: white; /* Color del texto */")
+"    color: white; /* Color del texto */\n"
+"}\n"
+"\n"
+"/* Estilo para el QAbstractItemView dentro del QComboBox (el cuadro desplegable) */\n"
+"QComboBox QAbstractItemView {\n"
+"    color: white; /* Color del texto en el cuadro desplegable */\n"
+"}\n"
+"")
         self.VersionBox.setObjectName("VersionBox")
+        self.VersionBox.addItem("")
         self.label_2 = QtWidgets.QLabel(Form)
         self.label_2.setGeometry(QtCore.QRect(630, 40, 121, 41))
         font = QtGui.QFont()
@@ -97,6 +107,7 @@ class Ui_Menu(object):
         font = QtGui.QFont()
         font.setFamily("Minecraft")
         self.vanillaCheck.setFont(font)
+        self.vanillaCheck.setCursor(QtGui.QCursor(QtCore.Qt.CrossCursor))
         self.vanillaCheck.setStyleSheet("QCheckBox {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
@@ -116,6 +127,7 @@ class Ui_Menu(object):
         font = QtGui.QFont()
         font.setFamily("Minecraft")
         self.fabricCheck.setFont(font)
+        self.fabricCheck.setCursor(QtGui.QCursor(QtCore.Qt.CrossCursor))
         self.fabricCheck.setStyleSheet("QCheckBox {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
@@ -135,6 +147,7 @@ class Ui_Menu(object):
         font = QtGui.QFont()
         font.setFamily("Minecraft")
         self.forgeCheck.setFont(font)
+        self.forgeCheck.setCursor(QtGui.QCursor(QtCore.Qt.CrossCursor))
         self.forgeCheck.setStyleSheet("QCheckBox {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
@@ -156,6 +169,7 @@ class Ui_Menu(object):
         font.setPointSize(20)
         font.setKerning(True)
         self.settingsButton.setFont(font)
+        self.settingsButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.settingsButton.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -189,6 +203,7 @@ class Ui_Menu(object):
         font.setPointSize(20)
         font.setKerning(True)
         self.filesButton.setFont(font)
+        self.filesButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.filesButton.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -202,6 +217,7 @@ class Ui_Menu(object):
         font.setPointSize(20)
         font.setKerning(True)
         self.exitButton.setFont(font)
+        self.exitButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.exitButton.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -223,13 +239,14 @@ class Ui_Menu(object):
         self.filesButton.raise_()
         self.exitButton.raise_()
 
-        self.retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(Form)
+        self.retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
-    def retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(self, Form):
+    def retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.PlayButton.setText(_translate("Form", "Play"))
+        self.VersionBox.setItemText(0, _translate("Form", "Version"))
         self.label_2.setText(_translate("Form", "Username"))
         self.label_3.setText(_translate("Form", "Version"))
         self.vanillaCheck.setText(_translate("Form", "Vanilla"))

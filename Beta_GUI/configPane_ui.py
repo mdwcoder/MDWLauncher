@@ -61,6 +61,7 @@ class Ui_ConfigPane(object):
         font.setPointSize(20)
         font.setKerning(True)
         self.GoBackButton.setFont(font)
+        self.GoBackButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.GoBackButton.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -88,6 +89,7 @@ class Ui_ConfigPane(object):
         font.setPointSize(20)
         font.setKerning(True)
         self.filesButton.setFont(font)
+        self.filesButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.filesButton.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -101,6 +103,7 @@ class Ui_ConfigPane(object):
         font.setPointSize(20)
         font.setKerning(True)
         self.saveButton.setFont(font)
+        self.saveButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.saveButton.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(1, 1, 1, 0.75)); /* Gradiante de verde camuflaje a gris oscuro con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -113,6 +116,7 @@ class Ui_ConfigPane(object):
         font.setFamily("Minecraft")
         font.setPointSize(16)
         self.ramBox.setFont(font)
+        self.ramBox.setCursor(QtGui.QCursor(QtCore.Qt.CrossCursor))
         self.ramBox.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
 "    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
@@ -134,19 +138,9 @@ class Ui_ConfigPane(object):
 "    alignment: center; /* Texto centrado */\n"
 "")
         self.label_5.setObjectName("label_5")
-        self.PlayButton = QtWidgets.QPushButton(Form)
-        self.PlayButton.setGeometry(QtCore.QRect(670, 470, 191, 101))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        font.setPointSize(26)
-        self.PlayButton.setFont(font)
-        self.PlayButton.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
-"    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
-"    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
-"")
-        self.PlayButton.setObjectName("PlayButton")
         self.blockImage = QtWidgets.QLabel(Form)
-        self.blockImage.setGeometry(QtCore.QRect(540, 140, 250, 250))
+        self.blockImage.setGeometry(QtCore.QRect(580, 190, 250, 250))
+        self.blockImage.setCursor(QtGui.QCursor(QtCore.Qt.ForbiddenCursor))
         self.blockImage.setStyleSheet("    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
 "background: transparent\n"
@@ -162,13 +156,12 @@ class Ui_ConfigPane(object):
         self.saveButton.raise_()
         self.ramBox.raise_()
         self.label_5.raise_()
-        self.PlayButton.raise_()
         self.blockImage.raise_()
 
-        self.retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettings(Form)
+        self.retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettings(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
-    def retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettings(self, Form):
+    def retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettings(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label_2.setText(_translate("Form", "Reserved RAM (GB)"))
@@ -177,4 +170,3 @@ class Ui_ConfigPane(object):
         self.filesButton.setText(_translate("Form", "Files"))
         self.saveButton.setText(_translate("Form", "Save"))
         self.label_5.setText(_translate("Form", "Java Path"))
-        self.PlayButton.setText(_translate("Form", "Play"))
