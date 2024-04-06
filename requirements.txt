@@ -1,0 +1,14 @@
+altgraph
+certifi
+charset-normalizer
+idna
+minecraft-launcher-lib
+packaging
+pefile
+pillow
+pyinstaller
+pyinstaller-hooks-contrib
+pywin32-ctypes
+requests
+urllib3
+py2app
