@@ -39,6 +39,7 @@ from Beta_GUI.configPane_ui import Ui_ConfigPane
 class ConfigPane(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setFixedSize(916, 586)
         self.ui = Ui_ConfigPane()
         self.ui.OpenSettings(self)
 
@@ -48,6 +49,7 @@ class main_gui(QtWidgets.QMainWindow):
         super().__init__()
         self.menuUi = Ui_Menu()
         self.configUi = ConfigPane()
+        self.setFixedSize(916, 586)
         self.PreStart()
         
     def PreStart(self):
@@ -68,8 +70,7 @@ class main_gui(QtWidgets.QMainWindow):
                 self.minecraft_directory = os.path.join(
                     '/home', self.user_linux, '.mdwLauncher'
                 )
-            self.configPath = f"{self.minecraft_directory}{os.sep}mdw_config.mdw"
-            print(self.configPath, self.minecraft_directory)
+            self.configPath = f"{self.minecraft_directory}{os.sep}mdw_config.json"
             if not os.path.exists(self.minecraft_directory):
                 os.makedirs(self.minecraft_directory)
         def javaCheck():
@@ -94,15 +95,16 @@ class main_gui(QtWidgets.QMainWindow):
             corrupt = False
         else:
             with open(self.configPath,  "r") as f:
-                if "&&" not in f.read():
+                try:
+                    corrupt = False
+                    data = json.load(f)
+                except:
                     ErrorMsg(
                             'Error config file',
                             'Corrupt file, default values ​​will be set.'
                             )
                     corrupt = True
-                else:
-                    corrupt = False
-                if not os.path.exists(f.read().split("&&")[1]):
+                if not os.path.exists(data['JAVA']):
                     checkJava = True
                 else:
                     checkJava = False
@@ -110,18 +112,29 @@ class main_gui(QtWidgets.QMainWindow):
             javaPath = javaCheck()
             if not os.path.exists(self.configPath) or corrupt:
                 with open(self.configPath, "w") as f:
-                    f.write(f"2&&{javaPath}")
+                    json.dump({"RAM": 2, "JAVA": javaPath}, f)
             else:
                 with open(self.configPath, "r") as f:
-                    ram = f.read().split("&&")[0]
+                    data = json.load(f)
+                    ram = data['RAM']
                 with open(self.configPath, "w") as f:
-                    f.write(f"{ram}&&{javaPath}")
-    def exit_(self) -> None:
+                    json.dump({"RAM": ram, "JAVA": javaPath}, f)
+                    
+    def closeEvent(self, event):
+        if self.exit_():
+            event.accept()
+        else:
+            event.ignore()
+
+                    
+    def exit_(self) -> bool:
         if QstMsg(
             'Exit',
             'Are you sure to exit the launcher?'
             ):
             exit()
+        else:
+            return False
             
     def seeLocalFiles(self) -> None:
         if os.name == 'nt':  # Windows
@@ -146,9 +159,9 @@ class main_gui(QtWidgets.QMainWindow):
         self.prepareWidgets(False)
         if os.path.exists(self.configPath):
             with open(self.configPath, "r") as f:
-                data = f.read().split("&&")
-            self.configUi.ui.ramBox.setValue(int(data[0]))
-            self.configUi.ui.javaPathEntry.setText(str(data[1]))
+                data = json.load(f)
+            self.configUi.ui.ramBox.setValue(int(data['RAM']))
+            self.configUi.ui.javaPathEntry.setText(str(data['JAVA']))
         
     def exitconfig(self):
         if QstMsg('Config', 'Changes you made may not be saved. Are you sure you want to exit?'):
@@ -169,12 +182,14 @@ class main_gui(QtWidgets.QMainWindow):
                 )
         else:
             with open(self.configPath, "w") as f:
-                f.write(f"{ram}&&{javaPath}")
+                json.dump({"RAM": ram, "JAVA": javaPath}, f)
 
     def prepareWidgets(self, main = True) -> None:
         def loadImages():
             if main:
                 self.menuUi.blockImage.setPixmap(Assets.AssetImageLoader('commandBlock.png'))
+            else:
+                self.configUi.ui.blockImage.setPixmap(Assets.AssetImageLoader('commandBlock.png'))
             self.setWindowIcon(Assets.AssetImageLoader('commandBlock.png', True))
         def connectButtons():
             if main:

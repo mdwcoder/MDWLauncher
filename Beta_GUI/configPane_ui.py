@@ -17,19 +17,6 @@ class Ui_ConfigPane(object):
         Form.resize(916, 586)
         Form.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #152B22, stop:0.25 #152B22, stop:1 #000000); /* Gradiante de verde camuflaje a negro *\n"
 "")
-        self.VersionBox = QtWidgets.QComboBox(Form)
-        self.VersionBox.setGeometry(QtCore.QRect(630, 180, 261, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        font.setPointSize(12)
-        self.VersionBox.setFont(font)
-        self.VersionBox.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
-"    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
-"    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
-"    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del combo */\n"
-"    min-width: 6em; /* Ancho mínimo */\n"
-"    color: white; /* Color del texto */")
-        self.VersionBox.setObjectName("VersionBox")
         self.label_2 = QtWidgets.QLabel(Form)
         self.label_2.setGeometry(QtCore.QRect(180, 190, 221, 41))
         font = QtGui.QFont()
@@ -44,20 +31,6 @@ class Ui_ConfigPane(object):
 "    alignment: center; /* Texto centrado */\n"
 "")
         self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(630, 130, 121, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        font.setPointSize(14)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("    color: white; /* Texto blanco */\n"
-"    background: transparent; /* Fondo transparente */\n"
-"    border: none; /* Sin borde */\n"
-"    alignment: center; /* Texto centrado */\n"
-"")
-        self.label_3.setObjectName("label_3")
         self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(10, 20, 891, 561))
         self.label.setStyleSheet("\n"
@@ -81,63 +54,6 @@ class Ui_ConfigPane(object):
 "    color: white; /* Color del texto */")
         self.javaPathEntry.setText("")
         self.javaPathEntry.setObjectName("javaPathEntry")
-        self.vanillaCheck = QtWidgets.QCheckBox(Form)
-        self.vanillaCheck.setGeometry(QtCore.QRect(640, 260, 221, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        self.vanillaCheck.setFont(font)
-        self.vanillaCheck.setStyleSheet("QCheckBox {\n"
-"    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
-"    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
-"    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
-"    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del checkbox */\n"
-"    min-width: 6em; /* Ancho mínimo */\n"
-"    color: white; /* Color del texto */\n"
-"}\n"
-"\n"
-"QCheckBox::indicator {\n"
-"    width: 15px; /* Ancho del indicador */\n"
-"    height: 15px; /* Altura del indicador */\n"
-"}")
-        self.vanillaCheck.setObjectName("vanillaCheck")
-        self.fabricCheck = QtWidgets.QCheckBox(Form)
-        self.fabricCheck.setGeometry(QtCore.QRect(640, 310, 221, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        self.fabricCheck.setFont(font)
-        self.fabricCheck.setStyleSheet("QCheckBox {\n"
-"    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
-"    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
-"    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
-"    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del checkbox */\n"
-"    min-width: 6em; /* Ancho mínimo */\n"
-"    color: white; /* Color del texto */\n"
-"}\n"
-"\n"
-"QCheckBox::indicator {\n"
-"    width: 15px; /* Ancho del indicador */\n"
-"    height: 15px; /* Altura del indicador */\n"
-"}")
-        self.fabricCheck.setObjectName("fabricCheck")
-        self.forgeCheck = QtWidgets.QCheckBox(Form)
-        self.forgeCheck.setGeometry(QtCore.QRect(640, 360, 221, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        self.forgeCheck.setFont(font)
-        self.forgeCheck.setStyleSheet("QCheckBox {\n"
-"    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
-"    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
-"    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
-"    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del checkbox */\n"
-"    min-width: 6em; /* Ancho mínimo */\n"
-"    color: white; /* Color del texto */\n"
-"}\n"
-"\n"
-"QCheckBox::indicator {\n"
-"    width: 15px; /* Ancho del indicador */\n"
-"    height: 15px; /* Altura del indicador */\n"
-"}")
-        self.forgeCheck.setObjectName("forgeCheck")
         self.GoBackButton = QtWidgets.QPushButton(Form)
         self.GoBackButton.setGeometry(QtCore.QRect(30, 520, 181, 51))
         font = QtGui.QFont()
@@ -152,7 +68,7 @@ class Ui_ConfigPane(object):
 "    color: white; /* Color del texto */")
         self.GoBackButton.setObjectName("GoBackButton")
         self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setGeometry(QtCore.QRect(20, 30, 561, 101))
+        self.label_4.setGeometry(QtCore.QRect(170, 30, 561, 101))
         font = QtGui.QFont()
         font.setFamily("Minecraft")
         font.setPointSize(26)
@@ -229,42 +145,17 @@ class Ui_ConfigPane(object):
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
 "")
         self.PlayButton.setObjectName("PlayButton")
-        self.label_6 = QtWidgets.QLabel(Form)
-        self.label_6.setGeometry(QtCore.QRect(630, 40, 121, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        font.setPointSize(14)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet("    color: white; /* Texto blanco */\n"
-"    background: transparent; /* Fondo transparente */\n"
-"    border: none; /* Sin borde */\n"
-"    alignment: center; /* Texto centrado */\n"
-"")
-        self.label_6.setObjectName("label_6")
-        self.nameEntry_2 = QtWidgets.QLineEdit(Form)
-        self.nameEntry_2.setGeometry(QtCore.QRect(630, 80, 261, 41))
-        font = QtGui.QFont()
-        font.setFamily("Minecraft")
-        font.setPointSize(12)
-        self.nameEntry_2.setFont(font)
-        self.nameEntry_2.setStyleSheet("    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */\n"
-"    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
+        self.blockImage = QtWidgets.QLabel(Form)
+        self.blockImage.setGeometry(QtCore.QRect(540, 140, 250, 250))
+        self.blockImage.setStyleSheet("    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */\n"
 "    border-radius: 10px; /* Bordes redondeados con un radio de 10px */\n"
-"    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del combo */\n"
-"    min-width: 6em; /* Ancho mínimo */\n"
-"    color: white; /* Color del texto */")
-        self.nameEntry_2.setText("")
-        self.nameEntry_2.setObjectName("nameEntry_2")
+"background: transparent\n"
+"")
+        self.blockImage.setText("")
+        self.blockImage.setObjectName("blockImage")
         self.label.raise_()
-        self.VersionBox.raise_()
         self.label_2.raise_()
-        self.label_3.raise_()
         self.javaPathEntry.raise_()
-        self.vanillaCheck.raise_()
-        self.fabricCheck.raise_()
-        self.forgeCheck.raise_()
         self.GoBackButton.raise_()
         self.label_4.raise_()
         self.filesButton.raise_()
@@ -272,24 +163,18 @@ class Ui_ConfigPane(object):
         self.ramBox.raise_()
         self.label_5.raise_()
         self.PlayButton.raise_()
-        self.label_6.raise_()
-        self.nameEntry_2.raise_()
+        self.blockImage.raise_()
 
-        self.retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettings(Form)
+        self.retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettings(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
-    def retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettings(self, Form):
+    def retranslateUiSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettingsSettings(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label_2.setText(_translate("Form", "Reserved RAM (GB)"))
-        self.label_3.setText(_translate("Form", "Version"))
-        self.vanillaCheck.setText(_translate("Form", "Vanilla"))
-        self.fabricCheck.setText(_translate("Form", "Fabric"))
-        self.forgeCheck.setText(_translate("Form", "Forge"))
         self.GoBackButton.setText(_translate("Form", "Go back"))
         self.label_4.setText(_translate("Form", "MDW Minecraft Launcher"))
         self.filesButton.setText(_translate("Form", "Files"))
         self.saveButton.setText(_translate("Form", "Save"))
         self.label_5.setText(_translate("Form", "Java Path"))
         self.PlayButton.setText(_translate("Form", "Play"))
-        self.label_6.setText(_translate("Form", "Username"))

@@ -223,10 +223,10 @@ class Ui_Menu(object):
         self.filesButton.raise_()
         self.exitButton.raise_()
 
-        self.retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(Form)
+        self.retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
-    def retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(self, Form):
+    def retranslateUiMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenuMenu(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.PlayButton.setText(_translate("Form", "Play"))

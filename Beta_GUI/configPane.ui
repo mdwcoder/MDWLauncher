@@ -17,30 +17,6 @@
    <string notr="true">background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #152B22, stop:0.25 #152B22, stop:1 #000000); /* Gradiante de verde camuflaje a negro *
 </string>
   </property>
-  <widget class="QComboBox" name="VersionBox">
-   <property name="geometry">
-    <rect>
-     <x>630</x>
-     <y>180</y>
-     <width>261</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
-    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
-    border-radius: 10px; /* Bordes redondeados con un radio de 10px */
-    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del combo */
-    min-width: 6em; /* Ancho mínimo */
-    color: white; /* Color del texto */</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -67,34 +43,6 @@
    </property>
    <property name="text">
     <string>Reserved RAM (GB)</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>630</x>
-     <y>130</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-     <pointsize>14</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">    color: white; /* Texto blanco */
-    background: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
-	alignment: center; /* Texto centrado */
-</string>
-   </property>
-   <property name="text">
-    <string>Version</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -144,105 +92,6 @@
     <string/>
    </property>
   </widget>
-  <widget class="QCheckBox" name="vanillaCheck">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>260</y>
-     <width>221</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QCheckBox {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
-    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
-    border-radius: 10px; /* Bordes redondeados con un radio de 10px */
-    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del checkbox */
-    min-width: 6em; /* Ancho mínimo */
-    color: white; /* Color del texto */
-}
-
-QCheckBox::indicator {
-    width: 15px; /* Ancho del indicador */
-    height: 15px; /* Altura del indicador */
-}</string>
-   </property>
-   <property name="text">
-    <string>Vanilla</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="fabricCheck">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>310</y>
-     <width>221</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QCheckBox {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
-    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
-    border-radius: 10px; /* Bordes redondeados con un radio de 10px */
-    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del checkbox */
-    min-width: 6em; /* Ancho mínimo */
-    color: white; /* Color del texto */
-}
-
-QCheckBox::indicator {
-    width: 15px; /* Ancho del indicador */
-    height: 15px; /* Altura del indicador */
-}</string>
-   </property>
-   <property name="text">
-    <string>Fabric</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="forgeCheck">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>360</y>
-     <width>221</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QCheckBox {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
-    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
-    border-radius: 10px; /* Bordes redondeados con un radio de 10px */
-    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del checkbox */
-    min-width: 6em; /* Ancho mínimo */
-    color: white; /* Color del texto */
-}
-
-QCheckBox::indicator {
-    width: 15px; /* Ancho del indicador */
-    height: 15px; /* Altura del indicador */
-}</string>
-   </property>
-   <property name="text">
-    <string>Forge</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="GoBackButton">
    <property name="geometry">
     <rect>
@@ -273,7 +122,7 @@ QCheckBox::indicator {
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>170</x>
      <y>30</y>
      <width>561</width>
      <height>101</height>
@@ -429,69 +278,28 @@ QCheckBox::indicator {
     <string>Play</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="blockImage">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>40</y>
-     <width>121</width>
-     <height>41</height>
+     <x>540</x>
+     <y>140</y>
+     <width>250</width>
+     <height>250</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-     <pointsize>14</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">    color: white; /* Texto blanco */
-    background: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
-	alignment: center; /* Texto centrado */
-</string>
-   </property>
-   <property name="text">
-    <string>Username</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="nameEntry_2">
-   <property name="geometry">
-    <rect>
-     <x>630</x>
-     <y>80</y>
-     <width>261</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Minecraft</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(21, 43, 34, 0.75), stop:0.25 rgba(21, 43, 34, 0.75), stop:1 rgba(255, 255, 255, 0.75)); /* Gradiante de verde camuflaje a blanco con opacidad */
-    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
+    <string notr="true">    border: 2px solid rgba(255, 255, 255, 0.75); /* Borde blanco de 2px de grosor */
     border-radius: 10px; /* Bordes redondeados con un radio de 10px */
-    padding: 2px 20px 2px 5px; /* Ajuste de relleno para el texto dentro del combo */
-    min-width: 6em; /* Ancho mínimo */
-    color: white; /* Color del texto */</string>
+background: transparent
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
   <zorder>label</zorder>
-  <zorder>VersionBox</zorder>
   <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
   <zorder>javaPathEntry</zorder>
-  <zorder>vanillaCheck</zorder>
-  <zorder>fabricCheck</zorder>
-  <zorder>forgeCheck</zorder>
   <zorder>GoBackButton</zorder>
   <zorder>label_4</zorder>
   <zorder>filesButton</zorder>
@@ -499,8 +307,7 @@ QCheckBox::indicator {
   <zorder>ramBox</zorder>
   <zorder>label_5</zorder>
   <zorder>PlayButton</zorder>
-  <zorder>label_6</zorder>
-  <zorder>nameEntry_2</zorder>
+  <zorder>blockImage</zorder>
  </widget>
  <resources/>
  <connections/>
